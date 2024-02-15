@@ -1,15 +1,23 @@
 import Image from "next/image"
 import { useState } from "react"
 import { NAV_LIST } from "./navbar.constants"
+import Profile from "../profile"
 
 export default function Navbar() {
     const [showNav, setShowNav] = useState(false)
+    const [profileOpen, setProfileOpen] = useState(false)
+
 
     const handleClick = () => {
         setShowNav(prev => !prev)
     }
 
+    const handleOpenProfile = () => {
+        setProfileOpen(true)
+    }
+
     return (
+        <>
         <header className="text-[#7A7492] font-bold  md:text-sm  lg:text-[14px]">
             <ul className="flex justify-end items-center md:gap-5 lg:gap-10 relative mx-2 py-4 w-full lg:h-[72px]">
                 <li className="absolute left-2">
@@ -29,7 +37,7 @@ export default function Navbar() {
                         </li>
                     )
                 })}
-                <li className="pr-[40px] invisible md:visible">
+                <li className="pr-[40px] invisible md:visible" onClick={handleOpenProfile}>
                     <Image
                         src="/common/wallet.png"
                         alt="logo"
@@ -55,5 +63,7 @@ export default function Navbar() {
                     </li>
                 </ul> : ""}
         </header>
+        { profileOpen && <Profile />}
+        </>
     )
 }

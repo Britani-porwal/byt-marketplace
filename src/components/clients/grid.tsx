@@ -2,7 +2,7 @@ import { CLIENT_LOGOS, CONTENT } from "./client.constants"
 
 export default function Grid() {
     return (
-        <div className="mt-24 bg-purple">
+        <div className="mt-24 bg-purple max-w-[1440px] mx-auto">
             <div className="p-20 flex gap-x-12">
                 <div className="w-1/2">
                     <div className="text-white pt-20">

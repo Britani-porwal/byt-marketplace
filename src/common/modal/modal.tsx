@@ -1,5 +1,6 @@
 import { Dispatch, useState } from "react";
 import { FormValues, validateFields } from "./validation";
+import { createUser } from "@/services/product";
 
 interface ModalProps {
     formFields: {
@@ -29,12 +30,16 @@ export default function Modal({ formFields, setIsOpen }: ModalProps) {
     }
 
     const handleFormSubmit = () => {
+        console.log("formValues",formValues)
         const errorValues = validateFields(formValues)
         if (errorValues) {
             setError(errorValues)
             return
         }
-        else handleCloseModal()
+        else{
+           formValues && createUser(formValues)
+            handleCloseModal()
+        }
     }
 
     return <div className="modalOverlay">
