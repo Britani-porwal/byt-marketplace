@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modalContainer {
+    width: 400px;
+    height: 80%;
+    margin: auto;
+    position: absolute;
+    background-color: #6947e2;
+    z-index: 9999;
+    padding: 32px;
+    border-radius: 16px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.modalTitle {
+    text-align: center;
+    font-size: 22px;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 12px;
+}
+
+.fieldsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.inputField {
+        padding: 10px;
+        border: 1px solid #544e6b;
+        border-radius: 12px;
+        font-size: 14px;
+}
+
+.lableContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.lableText {
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.submitButton {
+    background-color: black;
+    color: white;
+    border-radius: 16px;
+    font-weight: 500;
+    padding: 8px 24px;
+    &:hover {
+        color: black;
+        background-color: white;
+    }
+}
+
+.cancelButton {
+    color: #6947e2;
+    background-color: white;
+    border-radius: 16px;
+    font-weight: 500;
+    padding: 8px 24px;
+    &:hover {
+        background-color: black;
+        color: white;
+    }
+}
+
+.buttonContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+}
+
+.error {
+    color: red;
+    font-size: 14px;
+    font-weight: 500;
+    align-self: start;
+    margin: 4px;
+}
