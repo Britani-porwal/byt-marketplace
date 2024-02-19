@@ -27,11 +27,11 @@ const Wallet = () => {
                 const provider = new ethers.BrowserProvider(window.ethereum);
 
                 const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
-                let balance = await provider.getBalance(accounts[0])
-                let formattedBalance = ethers.formatEther(balance)
+                // let balance = await provider.getBalance(accounts[0])
+                // let formattedBalance = ethers.formatEther(balance)
                 setIsConnected(true)
-                setAccountBalance(formattedBalance)
-                setWalletAddress(accounts[0])
+                // setAccountBalance(formattedBalance)
+                // setWalletAddress(accounts[0])
             }
         }
         catch (error) {

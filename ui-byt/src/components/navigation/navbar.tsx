@@ -16,17 +16,6 @@ export default function Navbar() {
         setProfileOpen(true)
     }
 
-    const handleRedirect = (path: any) => {
-        if(path.includes("/")) {
-            
-        }
-        const targetElement = document.querySelector(path);
-
-        if (targetElement) {
-            targetElement.scrollIntoView({ behavior: 'smooth' });
-        }
-    }
-
     return (
         <>
             <header className="text-[#7A7492] font-bold  md:text-sm  lg:text-[14px]">
@@ -44,7 +33,6 @@ export default function Navbar() {
                     {NAV_LIST.map(({ label, path }, index) => {
                         return (
                             <li key={index} className="invisible md:visible">
-                                {/* <button onClick={() => handleRedirect(path)}>{label}</button> */}
                                 <SmoothLink to={path} label={label} />
                             </li>
                         )
@@ -62,7 +50,6 @@ export default function Navbar() {
                         {NAV_LIST.map(({ label, path }, index) => {
                             return (
                                 <li key={index} className="invisible md:visible">
-                                    {/* <button onClick={() => handleRedirect(path)}>{label}</button> */}
                                     <SmoothLink to={path} label={label} />
                                 </li>
                             )
