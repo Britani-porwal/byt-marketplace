@@ -1,15 +1,15 @@
 export const NAV_LIST = [
     {
         label: "Solutions",
-        path: "/#solution",
+        path: "solution",
     },
     {
         label: "Products",
-        path: "/#products",
+        path: "products",
     },
     {
         label: "Launchpad",
-        path: "/launchpad",
+        path: "launchpad",
     },
     // {
     //     label: "Marketplace",

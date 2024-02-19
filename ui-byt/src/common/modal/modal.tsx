@@ -30,7 +30,6 @@ export default function Modal({ formFields, setIsOpen }: ModalProps) {
     }
 
     const handleFormSubmit = () => {
-        console.log("formValues",formValues)
         const errorValues = validateFields(formValues)
         if (errorValues) {
             setError(errorValues)

@@ -10,5 +10,4 @@ export async function createUser(formValues: FormValues) {
         body: JSON.stringify(formValues)
     });
     const userId = await response.json();
-    console.log(userId);
   }
