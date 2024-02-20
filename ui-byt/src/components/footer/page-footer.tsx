@@ -1,16 +1,18 @@
 import Image from "next/image"
 import { FOOTER_DETAILS } from "./footer.constants"
+import Link from "next/link"
 
 export default function PageFooter() {
     return (
         <div className="pl-[128px] mt-[70px] max-w-[1440px] mx-[auto]">
             <div className="flex gap-6">
-                <Image
-                    src="/common/byt-logo.png"
-                    alt="logo"
-                    width={77}
-                    height={36} 
-                    className="w-[77px] h-[36px]"/>
+                <Link href={"/"}>
+                    <Image
+                        src="/common/byt-logo.png"
+                        alt="logo"
+                        width={77}
+                        height={36}
+                        className="w-[77px] h-[36px]" /></Link>
                 {FOOTER_DETAILS.map((element) => (
                     <>
                         {element.subTitles ?

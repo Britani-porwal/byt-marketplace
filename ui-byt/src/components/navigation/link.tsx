@@ -1,13 +1,14 @@
 import React from 'react';
-import { Link } from 'react-scroll';
+import Link from 'next/link';
 
 interface LinkProps {
-    to: string;
     label: string;
+    path: string;
 }
 
-const SmoothLink = ({ to, label }: LinkProps) => {
-    return <Link to={to} smooth={true} duration={800}>{label}</Link>
+const SmoothLink = ({ label, path }: LinkProps) => {
+
+    return <Link href={path} scroll={false}>{label}</Link>
 }
 
 export default SmoothLink

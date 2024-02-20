@@ -1,4 +1,5 @@
 import Image from "next/image"
+import SmoothLink from "../navigation/link"
 export default function Main() {
     return (
         <div className="bg-gradient-to-b from-violet-100">
@@ -12,11 +13,11 @@ export default function Main() {
                         <div className="mt-8 mb-10 text-sm md:text-lg">
                             <p>We provide blockchain tools and services for both technical and non-technical customers to make it easy for projects to turn Web3 dreams into reality.</p>
                         </div>
-                        <button className="bg-purple text-white font-bold px-6 py-4 rounded-[28px] mx-auto"><a href="#products">EXPLORE OUR PRODUCTS</a></button>
+                        <button className="bg-purple text-white font-bold px-6 py-4 rounded-[28px] mx-auto"><SmoothLink path={"#products"} label={"EXPLORE OUR PRODUCTS"} /></button>
                     </div>
                 </div>
                 <div className="flex-1">
-                    <Image 
+                    <Image
                         className="float-right"
                         src="/hero-image.png"
                         alt="main logo"

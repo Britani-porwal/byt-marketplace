@@ -7,7 +7,7 @@ const User = require("../schema");
 // The router will be added as a middleware and will take control of requests starting with path /record.
 const recordRoutes = express.Router();
 
-recordRoutes.route("/signup").post(function (req, response) {
+recordRoutes.route("/create").post(function (req, response) {
   let myobj = {
     subject: req.body.Subject,
     project: req.body.Project,

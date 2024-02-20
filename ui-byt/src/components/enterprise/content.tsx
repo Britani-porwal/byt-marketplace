@@ -2,6 +2,7 @@ import Image from "next/image"
 import { useEffect, useState } from "react";
 import { productTeamFormFields } from "../product-suite/product.constants";
 import Modal from "@/common/modal/modal";
+import { ENTERPRISE_CONTENT } from "./enterprise.constants";
 
 export default function Enterprise() {
     const [isOpen, setIsOpen] = useState(false);
@@ -23,14 +24,14 @@ export default function Enterprise() {
             <div className="max-w-[1400px] relative mx-auto flex">
                 <div className="pl-[140px]">
                     <div className="w-[550px]">
-                        <p className="tracking-[0.2em] font-bold text-purple mb-[8px]">ENTERPRISE SERVICES</p>
-                        <p className="text-5xl font-bold">Full Stack White Glove Development Team</p>
+                        <p className="tracking-[0.2em] font-bold text-purple mb-[8px]">{ENTERPRISE_CONTENT.title}</p>
+                        <p className="text-5xl font-bold">{ENTERPRISE_CONTENT.heading}</p>
                         <div>
-                            <p className="my-[32px] font-bold">Looking for a custom solution or a turn key package? Look no further than our world-class internal development team.</p>
-                            <p>Whether it's additional functionality add on to your existing smart contract, a custom chain agnostic marketplace, a full blown decentralized exchange or something even crazier, Byt has the team and the experience to make it happen.</p>
-                            <p className="my-[32px]">We offer full service buildout and launchpad services to our enterprise clients. If you can dream it we can build it…and build it fast!</p>
+                            {ENTERPRISE_CONTENT.description.map((content, index) => (
+                                <p key={index} className={`my-[32px] ${index===0 && "font-bold"} leading-[28px]`}>{content}</p>
+                            ))}
                         </div>
-                        <button className="bg-purple text-white font-bold px-[36px] py-[20px] rounded-[50px]" onClick={handleOpenModal}>LEARN ABOUT OUR ENTERPRISE SERVICES</button>
+                        <button className="bg-purple text-white font-bold px-[36px] py-[20px] rounded-[50px]" onClick={handleOpenModal}>{ENTERPRISE_CONTENT.buttonLable}</button>
                     </div>
                 </div>
                 <div className="w-[700px] overflow-hidden">

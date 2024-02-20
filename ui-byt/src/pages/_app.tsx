@@ -1,39 +1,23 @@
-// import '@/styles/globals.css'
-// import "@rainbow-me/rainbowkit/styles.css";
-// import {
-//   RainbowKitProvider,
-//   getDefaultConfig,
-// } from '@rainbow-me/rainbowkit'
-// import { mainnet } from 'wagmi/chains'
-// import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
-// import { WagmiProvider, http } from 'wagmi'
-// import type { AppProps } from 'next/app'
-
-// const config = getDefaultConfig({
-//   appName: 'RainbowKit demo',
-//   projectId: 'YOUR_PROJECT_ID',
-//   chains: [mainnet],
-//   transports: {
-//     [mainnet.id]: http(),
-//   },
-// })
-
-// const queryClient = new QueryClient()
-
-// export default function App({ Component, pageProps }: AppProps) {
-//   return <WagmiProvider config={config}>
-//     <QueryClientProvider client={queryClient}>
-//       <RainbowKitProvider>
-//         <Component {...pageProps} />
-//       </RainbowKitProvider>
-//     </QueryClientProvider>
-//   </WagmiProvider>
-// }
-
-import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
+import { useRouter } from 'next/router'
+import NProgress from 'nprogress'
+import 'nprogress/nprogress.css'
+import '@/styles/globals.css'
+import { useEffect } from 'react'
+import { Poppins } from "next/font/google"
 
+const poppins = Poppins({ weight: ['100', '300', '400', '500', '700', '900'], subsets: ['latin'], variable: '--font-poppins' })
 
 export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  const router = useRouter();
+
+  useEffect(() => {
+    router.events.on('routeChangeStart', () => NProgress.start());
+    router.events.on('routeChangeComplete', () => NProgress.done());
+    router.events.on('routeChangeError', () => NProgress.done());
+  }, [])
+
+  return <div className={`${poppins.variable} font-sans`}>
+    <Component {...pageProps} />
+  </div>
 }
