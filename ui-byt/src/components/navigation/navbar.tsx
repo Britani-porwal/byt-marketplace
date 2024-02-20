@@ -4,6 +4,7 @@ import { NAV_LIST } from "./navbar.constants"
 import Profile from "../profile"
 import SmoothLink from "./link"
 import Link from "next/link"
+import ToggleDarkMode from "../darkmode"
 
 export default function Navbar() {
     const [showNav, setShowNav] = useState(false)
@@ -40,6 +41,7 @@ export default function Navbar() {
                             </li>
                         )
                     })}
+                    <ToggleDarkMode />
                     <li className="pr-[40px] invisible md:visible" onClick={handleOpenProfile}>
                         <Image
                             src="/common/wallet.png"
