@@ -6,7 +6,11 @@ import SmoothLink from "./link"
 import Link from "next/link"
 import ToggleDarkMode from "../darkmode"
 
-export default function Navbar() {
+interface NavbarProps {
+    enableDarkTheme?: boolean
+}
+
+export default function Navbar({enableDarkTheme} : NavbarProps) {
     const [showNav, setShowNav] = useState(false)
     const [profileOpen, setProfileOpen] = useState(false)
 
@@ -20,12 +24,12 @@ export default function Navbar() {
 
     return (
         <>
-            <header className="text-[#7A7492] font-bold  md:text-sm  lg:text-[14px]">
+            <header className={`${enableDarkTheme ? 'text-white bg-[#0e0628]' : 'text-[#7A7492]'} font-bold  md:text-sm  lg:text-[14px]`}>
                 <ul className="flex justify-end items-center md:gap-5 lg:gap-10 relative mx-2 py-4 w-full lg:h-[72px]">
                     <li className="absolute left-2">
                         <Link href="/">
                             <Image
-                                src="/common/byt-logo.png"
+                                src={`${enableDarkTheme ? '/common/byt-light.svg' : '/common/byt-logo.png'}`}
                                 alt="logo"
                                 width={60}
                                 height={36} />

@@ -1,6 +1,6 @@
 import { Dispatch, useState } from "react";
 import { FormValues, validateFields } from "./validation";
-import { createUser } from "@/services/product";
+import { contactSupport } from "@/services/product";
 
 interface ModalProps {
     formFields: {
@@ -36,7 +36,7 @@ export default function Modal({ formFields, setIsOpen }: ModalProps) {
             return
         }
         else{
-           formValues && createUser(formValues)
+           formValues && contactSupport(formValues)
             handleCloseModal()
         }
     }

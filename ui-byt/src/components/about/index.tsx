@@ -24,7 +24,7 @@ const AboutSection = () => {
         </div>
 
         <div className="text-[24px] text-center mt-[100px] font-[700]">Our Team</div>
-        <div className="flex flex-wrap justify-center gap-[48px] py-[50px]">
+        <div className="flex flex-wrap justify-center gap-[56px] py-[50px]">
             {TEAM.map(({ photoUrl, name, designation }, index) => (
                 <div key={index} className="flex flex-col items-center justify-center">
                     <Image src={photoUrl} alt={name} width={180} height={180} />
