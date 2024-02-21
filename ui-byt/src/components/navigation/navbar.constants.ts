@@ -1,15 +1,17 @@
+import { ROUTE } from "@/constants/route.constants";
+
 export const NAV_LIST = [
     {
         label: "Solutions",
-        path: "/#solution",
+        path: ROUTE.SOLUTIONS,
     },
     {
         label: "Products",
-        path: "/#products",
+        path: ROUTE.PRODUCTS,
     },
     {
         label: "Launchpad",
-        path: "/launchpad",
+        path: ROUTE.LAUNCHPAD,
     },
     // {
     //     label: "Marketplace",

@@ -1,6 +1,6 @@
 const express = require("express");
 
-const User = require("../schema");
+const Project = require("../models/schema");
 
 // recordRoutes is an instance of the express router.
 // We use it to define our routes.
@@ -15,12 +15,8 @@ recordRoutes.route("/create").post(function (req, response) {
     message: req.body.Message,
   };
 
-  console.log(myobj);
-
-  const ProjectDetails = User;
-
   // creating document using create method
-  ProjectDetails.create(myobj)
+  Project.create(myobj)
     .then((result) => {
       response.json({ id: result.email });
     })

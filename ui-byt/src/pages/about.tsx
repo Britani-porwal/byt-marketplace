@@ -4,9 +4,9 @@ import Navbar from "@/components/navigation/navbar"
 
 const About = () => {
     return <>
-        <Navbar />
+        <Navbar enableDarkTheme={true}/>
         <AboutSection />
-        <PageFooter />
+        <PageFooter  enableDarkTheme={true}/>
     </>
 }
 

@@ -1,6 +1,6 @@
 import { FormValues } from "@/common/modal/validation";
 
-export async function createUser(formValues: FormValues) {
+export async function contactSupport(formValues: FormValues) {
     const response = await fetch("http://localhost:5000/create",
     {
         method: "POST",
