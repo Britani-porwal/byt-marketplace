@@ -4,6 +4,7 @@ import { NAV_LIST } from "./navbar.constants"
 import Profile from "../profile"
 import SmoothLink from "./link"
 import Link from "next/link"
+import ToggleDarkMode from "../darkmode"
 
 interface NavbarProps {
     enableDarkTheme?: boolean
@@ -44,6 +45,7 @@ export default function Navbar({enableDarkTheme} : NavbarProps) {
                             </li>
                         )
                     })}
+                    <ToggleDarkMode />
                     <li className="pr-[40px] invisible md:visible" onClick={handleOpenProfile}>
                         <Image
                             src="/common/wallet.png"

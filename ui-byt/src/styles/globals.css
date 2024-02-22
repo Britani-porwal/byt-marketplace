@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+    body {
+        @apply dark:bg-gray-800 bg-white;
+    }
+}
+
+html[class="dark"] .from-violet-100 {
+    background: transparent;
+}
+
 .modalOverlay {
     position: fixed;
     top: 0;
@@ -47,10 +57,10 @@
 }
 
 .inputField {
-        padding: 10px;
-        border: 1px solid #544e6b;
-        border-radius: 12px;
-        font-size: 14px;
+    padding: 10px;
+    border: 1px solid #544e6b;
+    border-radius: 12px;
+    font-size: 14px;
 }
 
 .lableContainer {
@@ -72,6 +82,7 @@
     border-radius: 16px;
     font-weight: 500;
     padding: 8px 24px;
+
     &:hover {
         color: black;
         background-color: white;
@@ -84,6 +95,7 @@
     border-radius: 16px;
     font-weight: 500;
     padding: 8px 24px;
+
     &:hover {
         background-color: black;
         color: white;
@@ -109,4 +121,4 @@
     background: #6947e2;
     height: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  }
+}

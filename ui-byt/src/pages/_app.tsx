@@ -5,6 +5,7 @@ import 'nprogress/nprogress.css'
 import '@/styles/globals.css'
 import { useEffect } from 'react'
 import { Poppins } from "next/font/google"
+import { ThemeProvider } from 'next-themes'
 import { Toaster } from 'react-hot-toast'
 
 const poppins = Poppins({ weight: ['100', '300', '400', '500', '700', '900'], subsets: ['latin'], variable: '--font-poppins' })
@@ -19,7 +20,9 @@ export default function App({ Component, pageProps }: AppProps) {
   }, [])
 
   return <div className={`${poppins.variable} font-sans`}>
-    <Toaster />
-    <Component {...pageProps} />
+    <ThemeProvider attribute='class'>
+      <Toaster />
+      <Component {...pageProps} />
+    </ThemeProvider>
   </div>
 }
