@@ -1,7 +1,8 @@
 import { FormValues } from "@/common/modal/validation";
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL
 
 export async function contactSupport(formValues: FormValues) {
-    const response = await fetch("http://localhost:5000/create",
+    const response = await fetch(`${BASE_URL}/create`,
     {
         method: "POST",
         headers: {
