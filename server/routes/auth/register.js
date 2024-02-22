@@ -15,9 +15,13 @@ router.route("/auth/register").post(async function (req, response) {
     const existingUser = await User.findOne({ username });
 
     if (userEmail) {
-      return response.status(400).json({ message: "User already exists" });
+      const error = new Error("User already exists");
+      error.status = 400;
+      throw error;
     } else if (existingUser) {
-      return response.status(400).json({ message: "Username already taken" });
+      const error = new Error("Username already taken");
+      error.status = 400;
+      throw error;
     }
 
     const newUser = new User({ email, username, password });
@@ -25,7 +29,7 @@ router.route("/auth/register").post(async function (req, response) {
 
     response.status(201).json({ message: "User registered successfully" });
   } catch (error) {
-    response.status(500).json({ message: error.message });
+    response.status(error.status || 500).json({ message: error.message });
   }
 });
 

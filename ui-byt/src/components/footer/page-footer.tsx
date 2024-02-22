@@ -9,8 +9,8 @@ interface FooterProps {
 
 export default function PageFooter({ enableDarkTheme }: FooterProps) {
     return (
-        <div className={`pl-[128px] pt-[70px] max-w-[1440px] mx-[auto] ${enableDarkTheme && 'bg-[#0e0628]'}`}>
-            <div className="flex gap-6">
+        <div className={`pl-[128px] pt-[70px] ${enableDarkTheme && 'bg-[#0e0628]'}`}>
+            <div className="flex gap-6 max-w-[1440px] mx-[auto]">
                 <Link href={"/"}>
                     <Image
                         src={`${enableDarkTheme ? '/common/byt-light.svg' : '/common/byt-logo.png'}`}
