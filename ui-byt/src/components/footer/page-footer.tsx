@@ -27,7 +27,7 @@ export default function PageFooter({ enableDarkTheme }: FooterProps) {
                                     <a key={index} className="text-[14px] text-[#777e90] mb-[16px] font-[500] hover:text-blue-600" href={path}>{label}</a>
                                 ))}
                             </div>
-                            : <a className="text-[16px] text-black font-[500]" href={element.link}>{element.title}</a>}
+                            : <a className={`text-[16px] ${enableDarkTheme ? 'text-[#fcfcfd]' : 'text-black'} font-[500]`} href={element.link}>{element.title}</a>}
                     </Fragment>
                 ))}
             </div>

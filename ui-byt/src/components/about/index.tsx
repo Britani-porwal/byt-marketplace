@@ -3,7 +3,7 @@ import { ABOUT_DETAILS, FIGURES, TEAM } from "./about.constants"
 
 const AboutSection = () => {
 
-    return <div className="max-w-[1440px] text-[#fcfcfd] bg-[#0e0628] md:px-[164px] px-[56px]">
+    return <div className="max-w-[1440px] mx-auto text-[#fcfcfd] md:px-[164px] px-[56px]">
         <div className="flex items-center justify-center flex-col md:flex-row py-[100px]">
             <Image src="/images/scuttle-rocket.png" alt="scuttle-rocket" width={500} height={500} />
             <div className="min-w-[300px]">

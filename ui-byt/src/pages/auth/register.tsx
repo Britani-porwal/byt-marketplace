@@ -3,11 +3,11 @@ import PageFooter from "@/components/footer/page-footer"
 import Navbar from "@/components/navigation/navbar"
 
 const Register = () => {
-    return<>
-    <Navbar enableDarkTheme ={true}/>
-    <AuthForm isRegister={true}/>
-    <PageFooter enableDarkTheme ={true}/>
-    </>
+    return <div className="bg-[#0e0628] min-h-[100vh]">
+        <Navbar enableDarkTheme={true} />
+        <AuthForm isRegister={true} />
+        <PageFooter enableDarkTheme={true} />
+    </div>
 }
 
 export default Register

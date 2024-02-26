@@ -1,7 +1,7 @@
 export const FAQ_HEAD = {
     title: "LEARN HOW TO GET STARTED",
     heading: "Frequently asked questions",
-    subHeading: "If you‘d like more help with the Byt community you can <a href=''>Contact Support</a>"
+    subHeading: "If you‘d like more help with the Byt community you can <a href='' className='text-[#3772ff]'>Contact Support</a>"
 }
 
 export const GENERAL_FAQ = [

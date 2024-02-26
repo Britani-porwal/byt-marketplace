@@ -107,6 +107,6 @@
 
 #nprogress .bar {
     background: #6947e2;
-    height: 5px;
+    height: 3px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   }

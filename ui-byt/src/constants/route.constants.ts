@@ -6,4 +6,5 @@ export const ROUTE = {
     ABOUT: '/about',
     SOLUTIONS: '/#solution',
     PRODUCTS: '/#products',
+    HOME: "/"
 }

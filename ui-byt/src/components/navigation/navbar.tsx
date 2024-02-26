@@ -1,24 +1,19 @@
 import Image from "next/image"
 import { useState } from "react"
 import { NAV_LIST } from "./navbar.constants"
-import Profile from "../profile"
 import SmoothLink from "./link"
 import Link from "next/link"
+import { ROUTE } from "@/constants/route.constants"
 
 interface NavbarProps {
     enableDarkTheme?: boolean
 }
 
-export default function Navbar({enableDarkTheme} : NavbarProps) {
+export default function Navbar({ enableDarkTheme }: NavbarProps) {
     const [showNav, setShowNav] = useState(false)
-    const [profileOpen, setProfileOpen] = useState(false)
 
     const handleClick = () => {
         setShowNav(prev => !prev)
-    }
-
-    const handleOpenProfile = () => {
-        setProfileOpen(true)
     }
 
     return (
@@ -26,7 +21,7 @@ export default function Navbar({enableDarkTheme} : NavbarProps) {
             <header className={`${enableDarkTheme ? 'text-white bg-[#0e0628]' : 'text-[#7A7492]'} font-bold  md:text-sm  lg:text-[14px]`}>
                 <ul className="flex justify-end items-center md:gap-5 lg:gap-10 relative mx-2 py-4 w-full lg:h-[72px]">
                     <li className="absolute left-2">
-                        <Link href="/">
+                        <Link href={ROUTE.HOME}>
                             <Image
                                 src={`${enableDarkTheme ? '/common/byt-light.svg' : '/common/byt-logo.png'}`}
                                 alt="logo"
@@ -44,7 +39,16 @@ export default function Navbar({enableDarkTheme} : NavbarProps) {
                             </li>
                         )
                     })}
-                    <li className="pr-[40px] invisible md:visible" onClick={handleOpenProfile}>
+                    <li>
+                        <Link href={ROUTE.LOGIN}>
+                            <Image
+                                src="/common/profile.svg"
+                                alt="user-proflie"
+                                width={40}
+                                height={40} />
+                        </Link>
+                    </li>
+                    <li className="pr-[40px] invisible md:visible">
                         <Image
                             src="/common/wallet.png"
                             alt="logo"
@@ -70,7 +74,6 @@ export default function Navbar({enableDarkTheme} : NavbarProps) {
                         </li>
                     </ul> : ""}
             </header>
-            {profileOpen && <Profile />}
         </>
     )
 }
