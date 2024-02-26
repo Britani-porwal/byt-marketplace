@@ -6,7 +6,7 @@ const cors = require("cors");
 
 const ProjectModel = require("./models/schema"); 
 
-require("dotenv").config({ path: "./config.env" });
+require("dotenv").config({ path: "./.env" });
 const port = process.env.PORT || 5000;
 
 app.use(cors());
